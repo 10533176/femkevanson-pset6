@@ -17,8 +17,7 @@ This app stores all your favourite recipes!
 
 ![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6-1/master/doc/Simulator Screen Shot 15 dec. 2016 22.15.33.png)
 
-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6-1/master/doc/Simulator Screen Shot 15 dec. 2016 22.15.33.png)
-
+![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6-1/master/doc/Schermafbeelding 2016-12-09 om 22.41.16.png)
 
 
 
