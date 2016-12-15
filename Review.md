@@ -1,6 +1,4 @@
-## Review by Lois van Vliet 
-
-Code Review voor Femke, door Ayanna
+## Review by Ayanna Colden
 
 Algemeen:
 * Extra print statements weghalen
