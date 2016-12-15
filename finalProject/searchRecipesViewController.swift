@@ -59,7 +59,6 @@ class searchRecipesViewController:UIViewController, UITableViewDataSource, UITab
         return cell
     }
     
-
     @IBAction func searchRecipes(_ sender: AnyObject) {
         
         //empty the arrays to empty the table
