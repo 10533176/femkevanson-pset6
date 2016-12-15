@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class RecepisListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var recipeName: UILabel!

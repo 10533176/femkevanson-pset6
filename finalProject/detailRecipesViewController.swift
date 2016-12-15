@@ -64,7 +64,6 @@ class detailRecipesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     // when user changed the recipe and want's to save the changes
     @IBAction func addRecipe(_ sender: Any) {
         

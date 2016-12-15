@@ -117,7 +117,6 @@ class recipesListViewController: UIViewController, UITableViewDataSource, UITabl
             nextView.titleRecipe = recipeTitle[self.tableView.indexPathForSelectedRow!.row]
             nextView.ingredientsRecipe = recipeIngredients[self.tableView.indexPathForSelectedRow!.row]
             nextView.descriptionRecipe = recipeDescription[self.tableView.indexPathForSelectedRow!.row]
-        
         }
     }
     

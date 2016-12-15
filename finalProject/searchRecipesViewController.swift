@@ -30,8 +30,6 @@ class searchRecipesViewController:UIViewController, UITableViewDataSource, UITab
         
         ref = FIRDatabase.database().reference()
         tableView.reloadData()
-        
-        
     }
     
     override func didReceiveMemoryWarning() {

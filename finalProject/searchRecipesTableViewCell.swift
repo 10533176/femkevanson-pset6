@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class searchRecipesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var recipeName: UILabel!

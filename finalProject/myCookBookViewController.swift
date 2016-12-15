@@ -22,7 +22,6 @@ class myCookBookViewController: UIViewController {
         static let username = "firstStringKey"
     }
     
-    
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var goButton: UIButton!

@@ -29,7 +29,6 @@ class newAccountViewController: UIViewController {
     @IBOutlet weak var createUserButton: UIButton!
     @IBOutlet weak var GOButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
