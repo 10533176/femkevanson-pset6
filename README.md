@@ -13,7 +13,7 @@ Application where the user can save their favourite recipes!
 - Create a Firebase Account and create a new project 
    - link: https://firebase.google.com
 - Download the GitHub project 
-- open project directory in terminal 
+- Open project directory in terminal 
 - Enter 'pod install' in terminal 
 - Open the project workspace 
 - download and insert the 'GoogleService-Info.plist' in the Xcode project
