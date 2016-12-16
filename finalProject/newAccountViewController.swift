@@ -59,6 +59,9 @@ class newAccountViewController: UIViewController {
     
     // MARK: when keyboard will show/ will hide
     
+    // used scrollView to enable to function of reaching each field in the view, even when keyboard appears. 
+    //keyboard dismissed on drag
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

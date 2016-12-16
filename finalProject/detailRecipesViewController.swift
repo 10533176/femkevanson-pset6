@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class detailRecipesViewController: UIViewController {
+class detailRecipesViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     //references to FiredataBase
     var ref:FIRDatabaseReference?
@@ -61,6 +61,11 @@ class detailRecipesViewController: UIViewController {
             descriptionRecipe = addingRecipe.text
             ingredientsRecipe = addingIngredients.text
         }
+        
+        // additional setup for displaying keyboard
+        addingIngredients.delegate = self
+        addingRecipe.delegate = self
+        addingTitle.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +73,24 @@ class detailRecipesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // when user changed the recipe and want's to save the changes
+    // MARK: hide or show keyboard
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        addingTitle.resignFirstResponder()
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    // MARK: saving recipe
+    
     @IBAction func addRecipe(_ sender: Any) {
         
         titleRecipe = addingTitle.text!

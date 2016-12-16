@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class myCookBookViewController: UIViewController {
+class myCookBookViewController: UIViewController{
     
     //references to FiredataBase
     var ref:FIRDatabaseReference?
@@ -43,7 +43,6 @@ class myCookBookViewController: UIViewController {
         // when keyboard appears
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
-
     }
 
     
@@ -53,6 +52,8 @@ class myCookBookViewController: UIViewController {
     }
     
     // MARK: when keyboard will show/ will hide
+    // used scrollView to enable to function of reaching each field in the view, even when keyboard appears.
+    //keyboard dismissed on drag
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -74,6 +75,7 @@ class myCookBookViewController: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         self.scrollView.contentInset = contentInset
     }
+    
     
     // MARK: user logging in
     

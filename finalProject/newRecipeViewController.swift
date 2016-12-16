@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class newRecipeViewController: UIViewController {
+class newRecipeViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
     //references to FiredataBase
     var ref:FIRDatabaseReference?
@@ -50,6 +50,10 @@ class newRecipeViewController: UIViewController {
         // mark user as owner of the recipe
         labelMadeBy.text = "Made by \(username)"
         
+        // setup for keyboard
+        ingredientsNewRecipe.delegate = self
+        descriptionNewRecipe.delegate = self
+        titleNewRecipe.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,7 +61,24 @@ class newRecipeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // when user adds new recipe to my CookBook
+    // MARK: hide or show keyboard
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        titleNewRecipe.resignFirstResponder()
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    // MARK: adding new recipe
+   
     @IBAction func addRecipe(_ sender: Any) {
         
         

@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 
 
-class searchRecipesViewController:UIViewController, UITableViewDataSource, UITableViewDelegate {
+class searchRecipesViewController:UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     //references to FiredataBase
     var ref:FIRDatabaseReference?
@@ -30,12 +30,25 @@ class searchRecipesViewController:UIViewController, UITableViewDataSource, UITab
         
         ref = FIRDatabase.database().reference()
         tableView.reloadData()
+        
+        //additional setup for keyboard
+        searchText.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: hide or show keyboard
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        searchText.resignFirstResponder()
+        return true
+    }
+    
+    // MARK: displaying HTTP Request
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -120,13 +133,12 @@ class searchRecipesViewController:UIViewController, UITableViewDataSource, UITab
     // function to show immage loaded from the http request
     func loadImageFromUrl(url: String, view: UIImageView){
         
-        // Create Url from string
         let url = NSURL(string: url)!
         
         // Download task:
         // - sharedSession = global NSURLCache, NSHTTPCookieStorage and NSURLCredentialStorage objects.
-        
         let task = URLSession.shared.dataTask(with: url as URL) { (responseData, responseUrl, error) -> Void in
+            
             // if responseData is not null...
             if let data = responseData{
                 
@@ -137,7 +149,6 @@ class searchRecipesViewController:UIViewController, UITableViewDataSource, UITab
             }
         }
         
-        // Run task
         task.resume()
     }
     
