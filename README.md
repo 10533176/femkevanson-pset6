@@ -1,23 +1,22 @@
-# femkevanson-pset6
-Cookbook app
+## My CookBook
+Femke van Son 
 
-This app stores all your favourite recipes! 
+# Assignment of the minor Programmeren UvA
 
-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6.1/master/doc/Simulator Screen Shot 15 dec. 2016 21.24.39.png)
+Application where the user can save their favourite recipes! 
 
-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6.1/master/doc/Simulator Screen Shot 15 dec. 2016 21.24.46.png)
+-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6.1/master/doc/Simulator Screen Shot 15 dec. 2016 21.24.39.png)
 
-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6.1/master/doc/Simulator Screen Shot 15 dec. 2016 21.35.29.png)
+# Installation of the App
 
-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6.1/master/doc/Simulator Screen Shot 15 dec. 2016 21.35.29.png)
-
-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6.1/master/doc/Simulator Screen Shot 15 dec. 2016 21.48.57.png)
-
-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6.1/master/doc/Simulator Screen Shot 15 dec. 2016 21.36.51.png)
-
-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6.1/master/doc/Simulator Screen Shot 15 dec. 2016 22.15.33.png)
-
-![ScreenShot](https://raw.github.com/10533176/femkevanson-pset6.1/master/doc/Schermafbeelding 2016-12-09 om 22.41.16.png)
+- Download xcode 8.1
+- Create a Firebase Account and create a new project 
+   - link: https://firebase.google.com
+- Download the GitHub project 
+- open project directory in terminal 
+- Enter 'pod install' in terminal 
+- Open the project workspace 
+- download and insert the 'GoogleService-Info.plist' in the Xcode project
 
 
 
