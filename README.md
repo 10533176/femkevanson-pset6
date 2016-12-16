@@ -1,7 +1,6 @@
 ## My CookBook
 Femke van Son 
-
-# Assignment of the minor Programmeren UvA
+Assignment of the minor Programmeren: UvA
 
 Application where the user can save their favourite recipes! 
 
