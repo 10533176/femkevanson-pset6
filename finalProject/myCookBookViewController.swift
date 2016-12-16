@@ -19,13 +19,14 @@ class myCookBookViewController: UIViewController {
     // saving username through the whole project
     struct defaultsKeys {
         
-        static let username = "firstStringKey"
+        static let username = "empty"
     }
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var nextScreenButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +34,16 @@ class myCookBookViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         ref = FIRDatabase.database().reference()
         
-        //only show nexscreenbutton when username and password match with dataBase, untill then: hide 
+        // only show nexscreenbutton when username and password match with dataBase, untill then: hide
         nextScreenButton.isHidden = true
         
-        //secure the user password
+        // secure the user password
         password.isSecureTextEntry = true
+        
+        // when keyboard appears
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+
     }
 
     
@@ -45,6 +51,31 @@ class myCookBookViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: when keyboard will show/ will hide
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillShow(notification:NSNotification){
+        //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        self.scrollView.contentInset = contentInset
+    }
+    
+    func keyboardWillHide(notification:NSNotification){
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        self.scrollView.contentInset = contentInset
+    }
+    
+    // MARK: user logging in
     
     // action when login button is clicked
     // for the errors in this function: I did try alert masseges but it did not work due to errors who no one knew to avoid
@@ -103,5 +134,7 @@ class myCookBookViewController: UIViewController {
         }
 
     }
+    
+    
     
 }

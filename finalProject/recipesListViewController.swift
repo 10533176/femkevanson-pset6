@@ -18,14 +18,14 @@ class recipesListViewController: UIViewController, UITableViewDataSource, UITabl
     // saving username through the whole project
     struct defaultsKeys {
         
-        static let username = "firstStringKey"
+        static let username = "empty"
     }
     
     @IBOutlet weak var tableView: UITableView!
     
-    var recipeTitle = [String]()
-    var recipeIngredients = [String]()
-    var recipeDescription = [String]()
+    var titleRecipe = [String]()
+    var ingredientsRecipe = [String]()
+    var descriptionRecipe = [String]()
     var username = String()
 
     
@@ -47,27 +47,27 @@ class recipesListViewController: UIViewController, UITableViewDataSource, UITabl
             let dictionary = snapshot.value as? NSDictionary
             
             if dictionary != nil{
-                self.recipeTitle = dictionary?.allKeys as! [String]
+                self.titleRecipe = dictionary?.allKeys as! [String]
                 
-                for keys in self.recipeTitle {
+                for keys in self.titleRecipe {
                     
                     self.ref?.child("Users").child(self.username).child("CookBook").child(keys).child("description").observeSingleEvent(of: .value, with: { (Snapshot) in
 
                         let description = Snapshot.value as! String
-                        self.recipeDescription.append(description)
+                        self.descriptionRecipe.append(description)
                     })
                     
                     self.ref?.child("Users").child(self.username).child("CookBook").child(keys).child("ingredients").observeSingleEvent(of: .value, with: { (Snapshot) in
                         
                         let ingredients = Snapshot.value as! String
-                        self.recipeIngredients.append(ingredients)
+                        self.ingredientsRecipe.append(ingredients)
                     })
 
                 }
             }
             else {
                 // let user know when there is no recipe to show in the table
-                self.recipeTitle = ["No recipies yet!"]
+                self.titleRecipe = ["No recipies yet!"]
             }
             
             self.tableView.reloadData()
@@ -84,14 +84,14 @@ class recipesListViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
-        return recipeTitle.count
+        return titleRecipe.count
     
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecepisListTableViewCell
-        cell.recipeName.text = self.recipeTitle[indexPath.row]
+        cell.titleRecipe.text = self.titleRecipe[indexPath.row]
 
         return cell
         
@@ -102,8 +102,8 @@ class recipesListViewController: UIViewController, UITableViewDataSource, UITabl
         
         if editingStyle == .delete {
             
-            let oldTitle = self.recipeTitle[indexPath.row]
-            self.recipeTitle.remove(at: indexPath.row)
+            let oldTitle = self.titleRecipe[indexPath.row]
+            self.titleRecipe.remove(at: indexPath.row)
             ref?.child("Users").child(username).child("CookBook").child(oldTitle).removeValue()
             self.tableView.reloadData()
         }
@@ -113,10 +113,13 @@ class recipesListViewController: UIViewController, UITableViewDataSource, UITabl
         
         // send all the info to next screen when row is selected
         if let nextView = segue.destination as? detailRecipesViewController {
-    
-            nextView.titleRecipe = recipeTitle[self.tableView.indexPathForSelectedRow!.row]
-            nextView.ingredientsRecipe = recipeIngredients[self.tableView.indexPathForSelectedRow!.row]
-            nextView.descriptionRecipe = recipeDescription[self.tableView.indexPathForSelectedRow!.row]
+            
+            nextView.titleRecipe = titleRecipe[self.tableView.indexPathForSelectedRow!.row]
+            
+            if ingredientsRecipe != [] || descriptionRecipe != [] {
+                nextView.ingredientsRecipe = ingredientsRecipe[self.tableView.indexPathForSelectedRow!.row]
+                nextView.descriptionRecipe = descriptionRecipe[self.tableView.indexPathForSelectedRow!.row]
+            }
         }
     }
     

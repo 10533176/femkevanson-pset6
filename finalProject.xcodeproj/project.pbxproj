@@ -30,20 +30,20 @@
 		EF170C701DF8548400D7E181 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		EF446EB11DF866E600CB56F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF446EB71DFA023100CB56F1 /* finalProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = finalProject.entitlements; sourceTree = "<group>"; };
-		EF446EB81DFACB0800CB56F1 /* searchRecipesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchRecipesTableViewCell.swift; sourceTree = "<group>"; };
+		EF446EB81DFACB0800CB56F1 /* searchRecipesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = searchRecipesTableViewCell.swift; path = finalProject/searchRecipesTableViewCell.swift; sourceTree = "<group>"; };
 		EF8F76C61DF80E1100F4248A /* finalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF8F76C91DF80E1100F4248A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF8F76CB1DF80E1100F4248A /* myCookBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCookBookViewController.swift; sourceTree = "<group>"; };
+		EF8F76C91DF80E1100F4248A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = finalProject/AppDelegate.swift; sourceTree = "<group>"; };
+		EF8F76CB1DF80E1100F4248A /* myCookBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = myCookBookViewController.swift; path = finalProject/myCookBookViewController.swift; sourceTree = "<group>"; };
 		EF8F76CE1DF80E1100F4248A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF8F76D01DF80E1100F4248A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF8F76D31DF80E1100F4248A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF8F76D51DF80E1100F4248A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF8F76DD1DF8492300F4248A /* recipesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recipesListViewController.swift; sourceTree = "<group>"; };
-		EF8F76DF1DF8499200F4248A /* searchRecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchRecipesViewController.swift; sourceTree = "<group>"; };
-		EF8F76E11DF849C300F4248A /* detailRecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailRecipesViewController.swift; sourceTree = "<group>"; };
-		EF8F76E31DF849E900F4248A /* newAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newAccountViewController.swift; sourceTree = "<group>"; };
-		EF8F76E51DF84A3A00F4248A /* RecepisListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecepisListTableViewCell.swift; sourceTree = "<group>"; };
-		EFB1AF5E1E028B5F0072FDB8 /* newRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newRecipeViewController.swift; sourceTree = "<group>"; };
+		EF8F76DD1DF8492300F4248A /* recipesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = recipesListViewController.swift; path = finalProject/recipesListViewController.swift; sourceTree = "<group>"; };
+		EF8F76DF1DF8499200F4248A /* searchRecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = searchRecipesViewController.swift; path = finalProject/searchRecipesViewController.swift; sourceTree = "<group>"; };
+		EF8F76E11DF849C300F4248A /* detailRecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = detailRecipesViewController.swift; path = finalProject/detailRecipesViewController.swift; sourceTree = "<group>"; };
+		EF8F76E31DF849E900F4248A /* newAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = newAccountViewController.swift; path = finalProject/newAccountViewController.swift; sourceTree = "<group>"; };
+		EF8F76E51DF84A3A00F4248A /* RecepisListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecepisListTableViewCell.swift; path = finalProject/RecepisListTableViewCell.swift; sourceTree = "<group>"; };
+		EFB1AF5E1E028B5F0072FDB8 /* newRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = newRecipeViewController.swift; path = finalProject/newRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,23 +97,41 @@
 		EF8F76C81DF80E1100F4248A /* finalProject */ = {
 			isa = PBXGroup;
 			children = (
+				EFCE2A8C1E03E2D10088ADFE /* tableViewCell's */,
+				EFCE2A8B1E03E2970088ADFE /* Views */,
 				EF446EB71DFA023100CB56F1 /* finalProject.entitlements */,
 				EF446EB11DF866E600CB56F1 /* GoogleService-Info.plist */,
-				EF8F76C91DF80E1100F4248A /* AppDelegate.swift */,
-				EF446EB81DFACB0800CB56F1 /* searchRecipesTableViewCell.swift */,
-				EF8F76CB1DF80E1100F4248A /* myCookBookViewController.swift */,
 				EF8F76CD1DF80E1100F4248A /* Main.storyboard */,
-				EFB1AF5E1E028B5F0072FDB8 /* newRecipeViewController.swift */,
-				EF8F76E51DF84A3A00F4248A /* RecepisListTableViewCell.swift */,
-				EF8F76E31DF849E900F4248A /* newAccountViewController.swift */,
-				EF8F76E11DF849C300F4248A /* detailRecipesViewController.swift */,
-				EF8F76DF1DF8499200F4248A /* searchRecipesViewController.swift */,
-				EF8F76DD1DF8492300F4248A /* recipesListViewController.swift */,
 				EF8F76D01DF80E1100F4248A /* Assets.xcassets */,
 				EF8F76D21DF80E1100F4248A /* LaunchScreen.storyboard */,
 				EF8F76D51DF80E1100F4248A /* Info.plist */,
 			);
 			path = finalProject;
+			sourceTree = "<group>";
+		};
+		EFCE2A8B1E03E2970088ADFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF8F76C91DF80E1100F4248A /* AppDelegate.swift */,
+				EF8F76CB1DF80E1100F4248A /* myCookBookViewController.swift */,
+				EFB1AF5E1E028B5F0072FDB8 /* newRecipeViewController.swift */,
+				EF8F76E31DF849E900F4248A /* newAccountViewController.swift */,
+				EF8F76E11DF849C300F4248A /* detailRecipesViewController.swift */,
+				EF8F76DF1DF8499200F4248A /* searchRecipesViewController.swift */,
+				EF8F76DD1DF8492300F4248A /* recipesListViewController.swift */,
+			);
+			name = Views;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		EFCE2A8C1E03E2D10088ADFE /* tableViewCell's */ = {
+			isa = PBXGroup;
+			children = (
+				EF446EB81DFACB0800CB56F1 /* searchRecipesTableViewCell.swift */,
+				EF8F76E51DF84A3A00F4248A /* RecepisListTableViewCell.swift */,
+			);
+			name = "tableViewCell's";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,9 +10,9 @@ import UIKit
 
 class searchRecipesTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var recipeName: UILabel!
-    @IBOutlet weak var recipeImage: UIImageView!
-    @IBOutlet weak var recipeRate: UILabel!
+    @IBOutlet weak var titleRecipe: UILabel!
+    @IBOutlet weak var imageRecipe: UIImageView!
+    @IBOutlet weak var rateRecipe: UILabel!
     
     
     override func awakeFromNib() {

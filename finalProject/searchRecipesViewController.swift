@@ -20,9 +20,9 @@ class searchRecipesViewController:UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
-    var recipesName = [String]()
-    var recipesImage = [String]()
-    var recipeURL = [String]()
+    var titleRecipe = [String]()
+    var imageRecipe = [String]()
+    var URLRecipe = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class searchRecipesViewController:UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return recipesName.count
+        return titleRecipe.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,29 +47,35 @@ class searchRecipesViewController:UIViewController, UITableViewDataSource, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! searchRecipesTableViewCell
         
         //allways show the recipe name, when there is no actual recipe to show the default will be an error
-        cell.recipeName.text = recipesName[indexPath.row]
+        cell.titleRecipe.text = titleRecipe[indexPath.row]
         
         // only fill in URL and image when there is actually something to show
-        if recipeURL != [] && recipesImage != [] {
+        if URLRecipe != [] && imageRecipe != [] {
             
-            cell.recipeRate.text = "\(recipeURL[indexPath.row])"
-            loadImageFromUrl(url: recipesImage[indexPath.row], view: cell.recipeImage)
+            cell.rateRecipe.text = "\(URLRecipe[indexPath.row])"
+            loadImageFromUrl(url: imageRecipe[indexPath.row], view: cell.imageRecipe)
         }
 
         return cell
     }
     
+    // function to redirect user to url of the source
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let url = URL(string: URLRecipe[indexPath.row])
+        UIApplication.shared.open(url!, options: [:])
+    }
+    
     @IBAction func searchRecipes(_ sender: AnyObject) {
         
         //empty the arrays to empty the table
-        recipesName = [String]()
-        recipesImage = [String]()
-        recipeURL = [String]()
+        titleRecipe = [String]()
+        imageRecipe = [String]()
+        URLRecipe = [String]()
         
         requestHTTP(title: searchText.text!)
 
     }
-
     
     func requestHTTP(title: String) {
         
@@ -85,12 +91,12 @@ class searchRecipesViewController:UIViewController, UITableViewDataSource, UITab
 
             if jsonDict == nil {
                 // found out that food2fork is not the most reliable api, when the server is not reacting: let the user kno
-                recipesName.append("ERROR while making connection to webserver")
+                titleRecipe.append("ERROR while making connection to webserver")
             } else {
                 for recipe in jsonDict?["recipes"]! as! [NSDictionary]{
-                    recipesName.append(recipe["title"]! as! String)
-                    recipesImage.append(recipe["image_url"] as! String)
-                    recipeURL.append(recipe["source_url"] as! String)
+                    titleRecipe.append(recipe["title"]! as! String)
+                    imageRecipe.append(recipe["image_url"] as! String)
+                    URLRecipe.append(recipe["source_url"] as! String)
                 }
             }
         } catch let error as NSError {

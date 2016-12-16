@@ -19,7 +19,7 @@ class detailRecipesViewController: UIViewController {
     // saving username through the whole project
     struct defaultsKeys {
         
-        static let username = "firstStringKey"
+        static let username = "empty"
     }
     
     @IBOutlet weak var addingIngredients: UITextView!
@@ -56,6 +56,10 @@ class detailRecipesViewController: UIViewController {
             addingRecipe.text = descriptionRecipe
             addingIngredients.text = ingredientsRecipe
             
+        } else {
+            titleRecipe = addingTitle.text!
+            descriptionRecipe = addingRecipe.text
+            ingredientsRecipe = addingIngredients.text
         }
     }
 

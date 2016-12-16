@@ -18,7 +18,7 @@ class newRecipeViewController: UIViewController {
     // saving username through the whole project
     struct defaultsKeys {
         
-        static let username = "firstStringKey"
+        static let username = "empty"
     }
     
     @IBOutlet weak var labelMadeBy: UILabel!
